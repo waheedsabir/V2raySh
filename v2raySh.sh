@@ -13,7 +13,7 @@ _magenta() { echo -e ${magenta}$*${none}; }
 _cyan() { echo -e ${cyan}$*${none}; }
 
 # Root
-[[ $(id -u) != 0 ]] && echo -e "\n «u§r¡K¡K?¨Ï¥Î ${red}root ${none}¥Î??¦æ ${yellow}~(^_^) ${none}\n" && exit 1
+[[ $(id -u) != 0 ]] && echo -e "\n å“å‘€â€¦â€¦è¯·ä½¿ç”¨ ${red}root ${none}ç”¨æˆ·è¿è¡Œ ${yellow}~(^_^) ${none}\n" && exit 1
 
 cmd="apt-get"
 
@@ -42,14 +42,14 @@ x86_64)
 	;;
 *)
 	echo -e " 
-	«¢«¢¡K¡K?? ${red}»¶??¥»${none} ¤£¤ä«ù§Aªº¨t?¡C ${yellow}(-_-) ${none}
+	å“ˆå“ˆâ€¦â€¦è¿™ä¸ª ${red}è¾£é¸¡è„šæœ¬${none} ä¸æ”¯æŒä½ çš„ç³»ç»Ÿã€‚ ${yellow}(-_-) ${none}
 
-	?ª`: ?¤ä«ù Ubuntu 16+ / Debian 8+ / CentOS 7+ ¨t?
+	å¤‡æ³¨: ä»…æ”¯æŒ Ubuntu 16+ / Debian 8+ / CentOS 7+ ç³»ç»Ÿ
 	" && exit 1
 	;;
 esac
 
-# ²Â²Âªº??¤èªk
+# ç¬¨ç¬¨çš„æ£€æµ‹æ–¹æ³•
 if [[ $(command -v apt-get) || $(command -v yum) ]] && [[ $(command -v systemctl) ]]; then
 
 	if [[ $(command -v yum) ]]; then
@@ -61,9 +61,9 @@ if [[ $(command -v apt-get) || $(command -v yum) ]] && [[ $(command -v systemctl
 else
 
 	echo -e " 
-	«¢«¢¡K¡K?? ${red}»¶??¥»${none} ¤£¤ä«ù§Aªº¨t?¡C ${yellow}(-_-) ${none}
+	å“ˆå“ˆâ€¦â€¦è¿™ä¸ª ${red}è¾£é¸¡è„šæœ¬${none} ä¸æ”¯æŒä½ çš„ç³»ç»Ÿã€‚ ${yellow}(-_-) ${none}
 
-	?ª`: ?¤ä«ù Ubuntu 16+ / Debian 8+ / CentOS 7+ ¨t?
+	å¤‡æ³¨: ä»…æ”¯æŒ Ubuntu 16+ / Debian 8+ / CentOS 7+ ç³»ç»Ÿ
 	" && exit 1
 
 fi
@@ -135,19 +135,19 @@ _sys_timezone() {
 	echo
 	timedatectl set-timezone Asia/Shanghai
 	timedatectl set-ntp true
-	echo "¤w?§Aªº¥DÉó?¸m?Asia/Shanghai??¦}³q?systemd-timesyncd¦Û?¦P¨B??¡C"
+	echo "å·²å°†ä½ çš„ä¸»æœºè®¾ç½®ä¸ºAsia/Shanghaiæ—¶åŒºå¹¶é€šè¿‡systemd-timesyncdè‡ªåŠ¨åŒæ­¥æ—¶é—´ã€‚"
 	echo
 
 	if [[ $IS_OPENVZ ]]; then
 		echo
-		echo -e "§Aªº¥DÉó?¹Ò? ${yellow}Openvz${none} ¡A«Ø?¨Ï¥Î${yellow}v2ray mkcp${none}¨t¦C??¡C"
-		echo -e "ª`·N¡G${yellow}Openvz${none} ¨t????ªk¥Ñ??Éó?µ{§Ç±±¨î¦P¨B¡C"
-		echo -e "¦pªG¥DÉó??¸ò??¬Û®t${yellow}¶W?90¬í${none}¡Av2ray??ªk¥¿±`³q«H¡A??ticket?¨tvps¥DÉó°Ó?¾ã¡C"
+		echo -e "ä½ çš„ä¸»æœºç¯å¢ƒä¸º ${yellow}Openvz${none} ï¼Œå»ºè®®ä½¿ç”¨${yellow}v2ray mkcp${none}ç³»åˆ—åè®®ã€‚"
+		echo -e "æ³¨æ„ï¼š${yellow}Openvz${none} ç³»ç»Ÿæ—¶é—´æ— æ³•ç”±è™šæ‹Ÿæœºå†…ç¨‹åºæ§åˆ¶åŒæ­¥ã€‚"
+		echo -e "å¦‚æœä¸»æœºæ—¶é—´è·Ÿå®é™…ç›¸å·®${yellow}è¶…è¿‡90ç§’${none}ï¼Œv2rayå°†æ— æ³•æ­£å¸¸é€šä¿¡ï¼Œè¯·å‘ticketè”ç³»vpsä¸»æœºå•†è°ƒæ•´ã€‚"
 	fi
 }
 
 _sys_time() {
-	echo -e "\n¥DÉó??¡G${yellow}"
+	echo -e "\nä¸»æœºæ—¶é—´ï¼š${yellow}"
 	timedatectl status | sed -n '1p;4p'
 	echo -e "${none}"
 	[[ $IS_OPENV ]] && pause
@@ -156,7 +156,7 @@ v2ray_config() {
 	# clear
 	echo
 	while :; do
-		echo -e "??? "$yellow"V2Ray"$none" ???? [${magenta}1-${#transport[*]}$none]"
+		echo -e "è¯·é€‰æ‹© "$yellow"V2Ray"$none" ä¼ è¾“åè®® [${magenta}1-${#transport[*]}$none]"
 		echo
 		for ((i = 1; i <= ${#transport[*]}; i++)); do
 			Stream="${transport[$i - 1]}"
@@ -169,16 +169,16 @@ v2ray_config() {
 			fi
 		done
 		echo
-		echo "?ª`1: §t¦³ [dynamicPort] ªº§Y?¥Î??ºİ¤f.."
-		echo "?ª`2: [utp | srtp | wechat-video | dtls | wireguard] ¤À???¦¨ [BT¤U? | ??³q? | ·L«H??³q? | DTLS 1.2 ?Õu¥] | WireGuard ?Õu¥]]"
+		echo "å¤‡æ³¨1: å«æœ‰ [dynamicPort] çš„å³å¯ç”¨åŠ¨æ€ç«¯å£.."
+		echo "å¤‡æ³¨2: [utp | srtp | wechat-video | dtls | wireguard] åˆ†åˆ«ä¼ªè£…æˆ [BTä¸‹è½½ | è§†é¢‘é€šè¯ | å¾®ä¿¡è§†é¢‘é€šè¯ | DTLS 1.2 æ•°æ®åŒ… | WireGuard æ•°æ®åŒ…]"
 		echo
-		read -p "$(echo -e "(Àq???: ${cyan}TCP$none)"):" v2ray_transport
+		read -p "$(echo -e "(é»˜è®¤åè®®: ${cyan}TCP$none)"):" v2ray_transport
 		[ -z "$v2ray_transport" ] && v2ray_transport=1
 		case $v2ray_transport in
 		[1-9] | [1-2][0-9] | 3[0-2])
 			echo
 			echo
-			echo -e "$yellow V2Ray ???? = $cyan${transport[$v2ray_transport - 1]}$none"
+			echo -e "$yellow V2Ray ä¼ è¾“åè®® = $cyan${transport[$v2ray_transport - 1]}$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -198,14 +198,14 @@ v2ray_port_config() {
 	*)
 		local random=$(shuf -i20001-65535 -n1)
 		while :; do
-			echo -e "??¤J "$yellow"V2Ray"$none" ºİ¤f ["$magenta"1-65535"$none"]"
-			read -p "$(echo -e "(Àq?ºİ¤f: ${cyan}${random}$none):")" v2ray_port
+			echo -e "è¯·è¾“å…¥ "$yellow"V2Ray"$none" ç«¯å£ ["$magenta"1-65535"$none"]"
+			read -p "$(echo -e "(é»˜è®¤ç«¯å£: ${cyan}${random}$none):")" v2ray_port
 			[ -z "$v2ray_port" ] && v2ray_port=$random
 			case $v2ray_port in
 			[1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
 				echo
 				echo
-				echo -e "$yellow V2Ray ºİ¤f = $cyan$v2ray_port$none"
+				echo -e "$yellow V2Ray ç«¯å£ = $cyan$v2ray_port$none"
 				echo "----------------------------------------------------------------"
 				echo
 				break
@@ -225,21 +225,21 @@ v2ray_port_config() {
 v2ray_dynamic_port_start() {
 
 	while :; do
-		echo -e "??¤J "$yellow"V2Ray ??ºİ¤f?©l "$none"­S? ["$magenta"1-65535"$none"]"
-		read -p "$(echo -e "(Àq??©lºİ¤f: ${cyan}10000$none):")" v2ray_dynamic_port_start_input
+		echo -e "è¯·è¾“å…¥ "$yellow"V2Ray åŠ¨æ€ç«¯å£å¼€å§‹ "$none"èŒƒå›´ ["$magenta"1-65535"$none"]"
+		read -p "$(echo -e "(é»˜è®¤å¼€å§‹ç«¯å£: ${cyan}10000$none):")" v2ray_dynamic_port_start_input
 		[ -z $v2ray_dynamic_port_start_input ] && v2ray_dynamic_port_start_input=10000
 		case $v2ray_dynamic_port_start_input in
 		$v2ray_port)
 			echo
-			echo " ¤£¯à©M V2Ray ºİ¤f¤@¤ò¤@?...."
+			echo " ä¸èƒ½å’Œ V2Ray ç«¯å£ä¸€æ¯›ä¸€æ ·...."
 			echo
-			echo -e " ?«e V2Ray ºİ¤f¡G${cyan}$v2ray_port${none}"
+			echo -e " å½“å‰ V2Ray ç«¯å£ï¼š${cyan}$v2ray_port${none}"
 			error
 			;;
 		[1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
 			echo
 			echo
-			echo -e "$yellow V2Ray ??ºİ¤f?©l = $cyan$v2ray_dynamic_port_start_input$none"
+			echo -e "$yellow V2Ray åŠ¨æ€ç«¯å£å¼€å§‹ = $cyan$v2ray_dynamic_port_start_input$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -260,28 +260,28 @@ v2ray_dynamic_port_start() {
 v2ray_dynamic_port_end() {
 
 	while :; do
-		echo -e "??¤J "$yellow"V2Ray ??ºİ¤f?§ô "$none"­S? ["$magenta"1-65535"$none"]"
-		read -p "$(echo -e "(Àq??§ôºİ¤f: ${cyan}20000$none):")" v2ray_dynamic_port_end_input
+		echo -e "è¯·è¾“å…¥ "$yellow"V2Ray åŠ¨æ€ç«¯å£ç»“æŸ "$none"èŒƒå›´ ["$magenta"1-65535"$none"]"
+		read -p "$(echo -e "(é»˜è®¤ç»“æŸç«¯å£: ${cyan}20000$none):")" v2ray_dynamic_port_end_input
 		[ -z $v2ray_dynamic_port_end_input ] && v2ray_dynamic_port_end_input=20000
 		case $v2ray_dynamic_port_end_input in
 		[1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
 
 			if [[ $v2ray_dynamic_port_end_input -le $v2ray_dynamic_port_start_input ]]; then
 				echo
-				echo " ¤£¯à¤p¤_©Îµ¥¤_ V2Ray ??ºİ¤f?©l­S?"
+				echo " ä¸èƒ½å°äºæˆ–ç­‰äº V2Ray åŠ¨æ€ç«¯å£å¼€å§‹èŒƒå›´"
 				echo
-				echo -e " ?«e V2Ray ??ºİ¤f?©l¡G${cyan}$v2ray_dynamic_port_start_input${none}"
+				echo -e " å½“å‰ V2Ray åŠ¨æ€ç«¯å£å¼€å§‹ï¼š${cyan}$v2ray_dynamic_port_start_input${none}"
 				error
 			elif [ $lt_v2ray_port ] && [[ ${v2ray_dynamic_port_end_input} -ge $v2ray_port ]]; then
 				echo
-				echo " V2Ray ??ºİ¤f?§ô­S? ¤£¯à¥]¬A V2Ray ºİ¤f..."
+				echo " V2Ray åŠ¨æ€ç«¯å£ç»“æŸèŒƒå›´ ä¸èƒ½åŒ…æ‹¬ V2Ray ç«¯å£..."
 				echo
-				echo -e " ?«e V2Ray ºİ¤f¡G${cyan}$v2ray_port${none}"
+				echo -e " å½“å‰ V2Ray ç«¯å£ï¼š${cyan}$v2ray_port${none}"
 				error
 			else
 				echo
 				echo
-				echo -e "$yellow V2Ray ??ºİ¤f?§ô = $cyan$v2ray_dynamic_port_end_input$none"
+				echo -e "$yellow V2Ray åŠ¨æ€ç«¯å£ç»“æŸ = $cyan$v2ray_dynamic_port_end_input$none"
 				echo "----------------------------------------------------------------"
 				echo
 				break
@@ -301,24 +301,24 @@ tls_config() {
 	echo
 	local random=$(shuf -i20001-65535 -n1)
 	while :; do
-		echo -e "??¤J "$yellow"V2Ray"$none" ºİ¤f ["$magenta"1-65535"$none"]¡A¤£¯à?? "$magenta"80"$none" ©Î "$magenta"443"$none" ºİ¤f"
-		read -p "$(echo -e "(Àq?ºİ¤f: ${cyan}${random}$none):")" v2ray_port
+		echo -e "è¯·è¾“å…¥ "$yellow"V2Ray"$none" ç«¯å£ ["$magenta"1-65535"$none"]ï¼Œä¸èƒ½é€‰æ‹© "$magenta"80"$none" æˆ– "$magenta"443"$none" ç«¯å£"
+		read -p "$(echo -e "(é»˜è®¤ç«¯å£: ${cyan}${random}$none):")" v2ray_port
 		[ -z "$v2ray_port" ] && v2ray_port=$random
 		case $v2ray_port in
 		80)
 			echo
-			echo " ...³£?¤F¤£¯à?? 80 ºİ¤f¤F«£....."
+			echo " ...éƒ½è¯´äº†ä¸èƒ½é€‰æ‹© 80 ç«¯å£äº†å’¯....."
 			error
 			;;
 		443)
 			echo
-			echo " ..³£?¤F¤£¯à?? 443 ºİ¤f¤F«£....."
+			echo " ..éƒ½è¯´äº†ä¸èƒ½é€‰æ‹© 443 ç«¯å£äº†å’¯....."
 			error
 			;;
 		[1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
 			echo
 			echo
-			echo -e "$yellow V2Ray ºİ¤f = $cyan$v2ray_port$none"
+			echo -e "$yellow V2Ray ç«¯å£ = $cyan$v2ray_port$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -331,29 +331,29 @@ tls_config() {
 
 	while :; do
 		echo
-		echo -e "??¤J¤@? $magenta¥¿ÚÌªº°ì¦W$none¡A¤@©w¤@©w¤@©w­n¥¿ÚÌ¡A¤£¡I¯à¡I¥X¡I?¡I"
-		read -p "(¨Ò¦p¡G233blog.com): " domain
+		echo -e "è¯·è¾“å…¥ä¸€ä¸ª $magentaæ­£ç¡®çš„åŸŸå$noneï¼Œä¸€å®šä¸€å®šä¸€å®šè¦æ­£ç¡®ï¼Œä¸ï¼èƒ½ï¼å‡ºï¼é”™ï¼"
+		read -p "(ä¾‹å¦‚ï¼š233blog.com): " domain
 		[ -z "$domain" ] && error && continue
 		echo
 		echo
-		echo -e "$yellow §Aªº°ì¦W = $cyan$domain$none"
+		echo -e "$yellow ä½ çš„åŸŸå = $cyan$domain$none"
 		echo "----------------------------------------------------------------"
 		break
 	done
 	get_ip
 	echo
 	echo
-	echo -e "$yellow ?? $magenta$domain$none $yellow¸ÑªR¨ì: $cyan$ip$none"
+	echo -e "$yellow è¯·å°† $magenta$domain$none $yellowè§£æåˆ°: $cyan$ip$none"
 	echo
-	echo -e "$yellow ?? $magenta$domain$none $yellow¸ÑªR¨ì: $cyan$ip$none"
+	echo -e "$yellow è¯·å°† $magenta$domain$none $yellowè§£æåˆ°: $cyan$ip$none"
 	echo
-	echo -e "$yellow ?? $magenta$domain$none $yellow¸ÑªR¨ì: $cyan$ip$none"
+	echo -e "$yellow è¯·å°† $magenta$domain$none $yellowè§£æåˆ°: $cyan$ip$none"
 	echo "----------------------------------------------------------------"
 	echo
 
 	while :; do
 
-		read -p "$(echo -e "(¬O§_¤w?¥¿ÚÌ¸ÑªR: [${magenta}Y$none]):") " record
+		read -p "$(echo -e "(æ˜¯å¦å·²ç»æ­£ç¡®è§£æ: [${magenta}Y$none]):") " record
 		if [[ -z "$record" ]]; then
 			error
 		else
@@ -361,7 +361,7 @@ tls_config() {
 				domain_check
 				echo
 				echo
-				echo -e "$yellow °ì¦W¸ÑªR = ${cyan}§ÚÚÌ©w¤w?¦³¸ÑªR¤F$none"
+				echo -e "$yellow åŸŸåè§£æ = ${cyan}æˆ‘ç¡®å®šå·²ç»æœ‰è§£æäº†$none"
 				echo "----------------------------------------------------------------"
 				echo
 				break
@@ -376,7 +376,7 @@ tls_config() {
 		auto_tls_config
 	else
 		caddy=true
-		install_caddy_info="¥´?"
+		install_caddy_info="æ‰“å¼€"
 	fi
 
 	if [[ $caddy ]]; then
@@ -386,37 +386,37 @@ tls_config() {
 auto_tls_config() {
 	echo -e "
 
-		¦w? Caddy ??? ¦Û?°t¸m TLS
+		å®‰è£… Caddy æ¥å®ç° è‡ªåŠ¨é…ç½® TLS
 		
-		¦pªG§A¤w?¦w? Nginx ©Î Caddy
+		å¦‚æœä½ å·²ç»å®‰è£… Nginx æˆ– Caddy
 
-		$yellow¦}¥B..¦Û¤v¯à·d©w°t¸m TLS$none
+		$yellowå¹¶ä¸”..è‡ªå·±èƒ½æå®šé…ç½® TLS$none
 
-		¨º¤\´N¤£»İ­n ¥´?¦Û?°t¸m TLS
+		é‚£ä¹ˆå°±ä¸éœ€è¦ æ‰“å¼€è‡ªåŠ¨é…ç½® TLS
 		"
 	echo "----------------------------------------------------------------"
 	echo
 
 	while :; do
 
-		read -p "$(echo -e "(¬O§_¦Û?°t¸m TLS: [${magenta}Y/N$none]):") " auto_install_caddy
+		read -p "$(echo -e "(æ˜¯å¦è‡ªåŠ¨é…ç½® TLS: [${magenta}Y/N$none]):") " auto_install_caddy
 		if [[ -z "$auto_install_caddy" ]]; then
 			error
 		else
 			if [[ "$auto_install_caddy" == [Yy] ]]; then
 				caddy=true
-				install_caddy_info="¥´?"
+				install_caddy_info="æ‰“å¼€"
 				echo
 				echo
-				echo -e "$yellow ¦Û?°t¸m TLS = $cyan$install_caddy_info$none"
+				echo -e "$yellow è‡ªåŠ¨é…ç½® TLS = $cyan$install_caddy_info$none"
 				echo "----------------------------------------------------------------"
 				echo
 				break
 			elif [[ "$auto_install_caddy" == [Nn] ]]; then
-				install_caddy_info="??"
+				install_caddy_info="å…³é—­"
 				echo
 				echo
-				echo -e "$yellow ¦Û?°t¸m TLS = $cyan$install_caddy_info$none"
+				echo -e "$yellow è‡ªåŠ¨é…ç½® TLS = $cyan$install_caddy_info$none"
 				echo "----------------------------------------------------------------"
 				echo
 				break
@@ -430,8 +430,8 @@ auto_tls_config() {
 path_config_ask() {
 	echo
 	while :; do
-		echo -e "¬O§_?? ÊI¯¸?? ©M ¸ô?¤À¬y [${magenta}Y/N$none]"
-		read -p "$(echo -e "(Àq?: [${cyan}N$none]):")" path_ask
+		echo -e "æ˜¯å¦å¼€å¯ ç½‘ç«™ä¼ªè£… å’Œ è·¯å¾„åˆ†æµ [${magenta}Y/N$none]"
+		read -p "$(echo -e "(é»˜è®¤: [${cyan}N$none]):")" path_ask
 		[[ -z $path_ask ]] && path_ask="n"
 
 		case $path_ask in
@@ -442,7 +442,7 @@ path_config_ask() {
 		N | n)
 			echo
 			echo
-			echo -e "$yellow ÊI¯¸?? ©M ¸ô?¤À¬y = $cyan¤£·Q°t¸m$none"
+			echo -e "$yellow ç½‘ç«™ä¼ªè£… å’Œ è·¯å¾„åˆ†æµ = $cyanä¸æƒ³é…ç½®$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -456,21 +456,21 @@ path_config_ask() {
 path_config() {
 	echo
 	while :; do
-		echo -e "??¤J·Q­n ${magenta}¥Î?¤À¬yªº¸ô?$none , ¨Ò¦p /233blog , ¨º¤\¥u»İ­n?¤J 233blog §Y¥i"
-		read -p "$(echo -e "(Àq?: [${cyan}233blog$none]):")" path
+		echo -e "è¯·è¾“å…¥æƒ³è¦ ${magenta}ç”¨æ¥åˆ†æµçš„è·¯å¾„$none , ä¾‹å¦‚ /233blog , é‚£ä¹ˆåªéœ€è¦è¾“å…¥ 233blog å³å¯"
+		read -p "$(echo -e "(é»˜è®¤: [${cyan}233blog$none]):")" path
 		[[ -z $path ]] && path="233blog"
 
 		case $path in
 		*[/$]*)
 			echo
-			echo -e " ¥Ñ¤_???¥»¤Ó»¶?¤F..©Ò¥H¤À¬yªº¸ô?¤£¯à¥]§t$red / $none©Î$red $ $none???²Å?.... "
+			echo -e " ç”±äºè¿™ä¸ªè„šæœ¬å¤ªè¾£é¸¡äº†..æ‰€ä»¥åˆ†æµçš„è·¯å¾„ä¸èƒ½åŒ…å«$red / $noneæˆ–$red $ $noneè¿™ä¸¤ä¸ªç¬¦å·.... "
 			echo
 			error
 			;;
 		*)
 			echo
 			echo
-			echo -e "$yellow ¤À¬yªº¸ô? = ${cyan}/${path}$none"
+			echo -e "$yellow åˆ†æµçš„è·¯å¾„ = ${cyan}/${path}$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -483,25 +483,25 @@ path_config() {
 proxy_site_config() {
 	echo
 	while :; do
-		echo -e "??¤J ${magenta}¤@?¥¿ÚÌªº$none ${cyan}ÊI§}$none ¥Î?§@? ${cyan}ÊI¯¸ªº??$none , ¨Ò¦p https://liyafly.com"
-		echo -e "?¨Ò...§A?«eªº°ì¦W¬O $green$domain$none , ??ªºÊI§}ªº¬O https://liyafly.com"
-		echo -e "µM¦Z¥´?§Aªº°ì¦W?­Ô...?¥Ü¥X?ªº?®e´N¬O?¦Û https://liyafly.com ªº?®e"
-		echo -e "¨ä?´N¬O¤@?¤Ï¥N...©ú¥Õ´N¦n..."
-		echo -e "¦pªG¤£¯à??¦¨¥\...¥i¥H¨Ï¥Î v2ray config ­×§ï??ªºÊI§}"
-		read -p "$(echo -e "(Àq?: [${cyan}https://liyafly.com$none]):")" proxy_site
+		echo -e "è¯·è¾“å…¥ ${magenta}ä¸€ä¸ªæ­£ç¡®çš„$none ${cyan}ç½‘å€$none ç”¨æ¥ä½œä¸º ${cyan}ç½‘ç«™çš„ä¼ªè£…$none , ä¾‹å¦‚ https://liyafly.com"
+		echo -e "ä¸¾ä¾‹...ä½ å½“å‰çš„åŸŸåæ˜¯ $green$domain$none , ä¼ªè£…çš„ç½‘å€çš„æ˜¯ https://liyafly.com"
+		echo -e "ç„¶åæ‰“å¼€ä½ çš„åŸŸåæ—¶å€™...æ˜¾ç¤ºå‡ºæ¥çš„å†…å®¹å°±æ˜¯æ¥è‡ª https://liyafly.com çš„å†…å®¹"
+		echo -e "å…¶å®å°±æ˜¯ä¸€ä¸ªåä»£...æ˜ç™½å°±å¥½..."
+		echo -e "å¦‚æœä¸èƒ½ä¼ªè£…æˆåŠŸ...å¯ä»¥ä½¿ç”¨ v2ray config ä¿®æ”¹ä¼ªè£…çš„ç½‘å€"
+		read -p "$(echo -e "(é»˜è®¤: [${cyan}https://liyafly.com$none]):")" proxy_site
 		[[ -z $proxy_site ]] && proxy_site="https://liyafly.com"
 
 		case $proxy_site in
 		*[#$]*)
 			echo
-			echo -e " ¥Ñ¤_???¥»¤Ó»¶?¤F..©Ò¥H??ªºÊI§}¤£¯à¥]§t$red # $none©Î$red $ $none???²Å?.... "
+			echo -e " ç”±äºè¿™ä¸ªè„šæœ¬å¤ªè¾£é¸¡äº†..æ‰€ä»¥ä¼ªè£…çš„ç½‘å€ä¸èƒ½åŒ…å«$red # $noneæˆ–$red $ $noneè¿™ä¸¤ä¸ªç¬¦å·.... "
 			echo
 			error
 			;;
 		*)
 			echo
 			echo
-			echo -e "$yellow ??ªºÊI§} = ${cyan}${proxy_site}$none"
+			echo -e "$yellow ä¼ªè£…çš„ç½‘å€ = ${cyan}${proxy_site}$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -513,26 +513,26 @@ proxy_site_config() {
 blocked_hosts() {
 	echo
 	while :; do
-		echo -e "¬O§_???§i?ºI(?¼v?©Ê¯à) [${magenta}Y/N$none]"
-		read -p "$(echo -e "(Àq? [${cyan}N$none]):")" blocked_ad
+		echo -e "æ˜¯å¦å¼€å¯å¹¿å‘Šæ‹¦æˆª(ä¼šå½±å“æ€§èƒ½) [${magenta}Y/N$none]"
+		read -p "$(echo -e "(é»˜è®¤ [${cyan}N$none]):")" blocked_ad
 		[[ -z $blocked_ad ]] && blocked_ad="n"
 
 		case $blocked_ad in
 		Y | y)
-			blocked_ad_info="??"
+			blocked_ad_info="å¼€å¯"
 			ban_ad=true
 			echo
 			echo
-			echo -e "$yellow ?§i?ºI = $cyan??$none"
+			echo -e "$yellow å¹¿å‘Šæ‹¦æˆª = $cyanå¼€å¯$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
 			;;
 		N | n)
-			blocked_ad_info="??"
+			blocked_ad_info="å…³é—­"
 			echo
 			echo
-			echo -e "$yellow ?§i?ºI = $cyan??$none"
+			echo -e "$yellow å¹¿å‘Šæ‹¦æˆª = $cyanå…³é—­$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -548,8 +548,8 @@ shadowsocks_config() {
 	echo
 
 	while :; do
-		echo -e "¬O§_°t¸m ${yellow}Shadowsocks${none} [${magenta}Y/N$none]"
-		read -p "$(echo -e "(Àq? [${cyan}N$none]):") " install_shadowsocks
+		echo -e "æ˜¯å¦é…ç½® ${yellow}Shadowsocks${none} [${magenta}Y/N$none]"
+		read -p "$(echo -e "(é»˜è®¤ [${cyan}N$none]):") " install_shadowsocks
 		[[ -z "$install_shadowsocks" ]] && install_shadowsocks="n"
 		if [[ "$install_shadowsocks" == [Yy] ]]; then
 			echo
@@ -569,13 +569,13 @@ shadowsocks_config() {
 shadowsocks_port_config() {
 	local random=$(shuf -i20001-65535 -n1)
 	while :; do
-		echo -e "??¤J "$yellow"Shadowsocks"$none" ºİ¤f ["$magenta"1-65535"$none"]¡A¤£¯à©M "$yellow"V2Ray"$none" ºİ¤f¬Û¦P"
-		read -p "$(echo -e "(Àq?ºİ¤f: ${cyan}${random}$none):") " ssport
+		echo -e "è¯·è¾“å…¥ "$yellow"Shadowsocks"$none" ç«¯å£ ["$magenta"1-65535"$none"]ï¼Œä¸èƒ½å’Œ "$yellow"V2Ray"$none" ç«¯å£ç›¸åŒ"
+		read -p "$(echo -e "(é»˜è®¤ç«¯å£: ${cyan}${random}$none):") " ssport
 		[ -z "$ssport" ] && ssport=$random
 		case $ssport in
 		$v2ray_port)
 			echo
-			echo " ¤£¯à©M V2Ray ºİ¤f¤@¤ò¤@?...."
+			echo " ä¸èƒ½å’Œ V2Ray ç«¯å£ä¸€æ¯›ä¸€æ ·...."
 			error
 			;;
 		[1-9] | [1-9][0-9] | [1-9][0-9][0-9] | [1-9][0-9][0-9][0-9] | [1-5][0-9][0-9][0-9][0-9] | 6[0-4][0-9][0-9][0-9] | 65[0-4][0-9][0-9] | 655[0-3][0-5])
@@ -584,24 +584,24 @@ shadowsocks_port_config() {
 			fi
 			if [[ $tls && $ssport == "80" ]] || [[ $tls && $ssport == "443" ]]; then
 				echo
-				echo -e "¥Ñ¤_§A¤w??¤F "$green"WebSocket + TLS $none©Î$green HTTP/2"$none" ????."
+				echo -e "ç”±äºä½ å·²é€‰æ‹©äº† "$green"WebSocket + TLS $noneæˆ–$green HTTP/2"$none" ä¼ è¾“åè®®."
 				echo
-				echo -e "©Ò¥H¤£¯à?? "$magenta"80"$none" ©Î "$magenta"443"$none" ºİ¤f"
+				echo -e "æ‰€ä»¥ä¸èƒ½é€‰æ‹© "$magenta"80"$none" æˆ– "$magenta"443"$none" ç«¯å£"
 				error
 			elif [[ $v2ray_dynamic_port_start_input == $ssport || $v2ray_dynamic_port_end_input == $ssport ]]; then
 				local multi_port="${v2ray_dynamic_port_start_input} - ${v2ray_dynamic_port_end_input}"
 				echo
-				echo " ©êºp¡A¦¹ºİ¤f©M V2Ray ??ºİ¤f ?¬ğ¡A?«e V2Ray ??ºİ¤f­S??¡G$multi_port"
+				echo " æŠ±æ­‰ï¼Œæ­¤ç«¯å£å’Œ V2Ray åŠ¨æ€ç«¯å£ å†²çªï¼Œå½“å‰ V2Ray åŠ¨æ€ç«¯å£èŒƒå›´ä¸ºï¼š$multi_port"
 				error
 			elif [[ $v2ray_dynamic_port_start_input -lt $ssport && $ssport -le $v2ray_dynamic_port_end_input ]]; then
 				local multi_port="${v2ray_dynamic_port_start_input} - ${v2ray_dynamic_port_end_input}"
 				echo
-				echo " ©êºp¡A¦¹ºİ¤f©M V2Ray ??ºİ¤f ?¬ğ¡A?«e V2Ray ??ºİ¤f­S??¡G$multi_port"
+				echo " æŠ±æ­‰ï¼Œæ­¤ç«¯å£å’Œ V2Ray åŠ¨æ€ç«¯å£ å†²çªï¼Œå½“å‰ V2Ray åŠ¨æ€ç«¯å£èŒƒå›´ä¸ºï¼š$multi_port"
 				error
 			else
 				echo
 				echo
-				echo -e "$yellow Shadowsocks ºİ¤f = $cyan$ssport$none"
+				echo -e "$yellow Shadowsocks ç«¯å£ = $cyan$ssport$none"
 				echo "----------------------------------------------------------------"
 				echo
 				break
@@ -619,20 +619,20 @@ shadowsocks_port_config() {
 shadowsocks_password_config() {
 
 	while :; do
-		echo -e "??¤J "$yellow"Shadowsocks"$none" ±K?"
-		read -p "$(echo -e "(Àq?±K?: ${cyan}233blog.com$none)"): " sspass
+		echo -e "è¯·è¾“å…¥ "$yellow"Shadowsocks"$none" å¯†ç "
+		read -p "$(echo -e "(é»˜è®¤å¯†ç : ${cyan}233blog.com$none)"): " sspass
 		[ -z "$sspass" ] && sspass="233blog.com"
 		case $sspass in
 		*[/$]*)
 			echo
-			echo -e " ¥Ñ¤_???¥»¤Ó»¶?¤F..©Ò¥H±K?¤£¯à¥]§t$red / $none©Î$red $ $none???²Å?.... "
+			echo -e " ç”±äºè¿™ä¸ªè„šæœ¬å¤ªè¾£é¸¡äº†..æ‰€ä»¥å¯†ç ä¸èƒ½åŒ…å«$red / $noneæˆ–$red $ $noneè¿™ä¸¤ä¸ªç¬¦å·.... "
 			echo
 			error
 			;;
 		*)
 			echo
 			echo
-			echo -e "$yellow Shadowsocks ±K? = $cyan$sspass$none"
+			echo -e "$yellow Shadowsocks å¯†ç  = $cyan$sspass$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -646,21 +646,21 @@ shadowsocks_password_config() {
 shadowsocks_ciphers_config() {
 
 	while :; do
-		echo -e "??? "$yellow"Shadowsocks"$none" ¥[±K?? [${magenta}1-${#ciphers[*]}$none]"
+		echo -e "è¯·é€‰æ‹© "$yellow"Shadowsocks"$none" åŠ å¯†åè®® [${magenta}1-${#ciphers[*]}$none]"
 		for ((i = 1; i <= ${#ciphers[*]}; i++)); do
 			ciphers_show="${ciphers[$i - 1]}"
 			echo
 			echo -e "$yellow $i. $none${ciphers_show}"
 		done
 		echo
-		read -p "$(echo -e "(Àq?¥[±K??: ${cyan}${ciphers[6]}$none)"):" ssciphers_opt
+		read -p "$(echo -e "(é»˜è®¤åŠ å¯†åè®®: ${cyan}${ciphers[6]}$none)"):" ssciphers_opt
 		[ -z "$ssciphers_opt" ] && ssciphers_opt=7
 		case $ssciphers_opt in
 		[1-7])
 			ssciphers=${ciphers[$ssciphers_opt - 1]}
 			echo
 			echo
-			echo -e "$yellow Shadowsocks ¥[±K?? = $cyan${ssciphers}$none"
+			echo -e "$yellow Shadowsocks åŠ å¯†åè®® = $cyan${ssciphers}$none"
 			echo "----------------------------------------------------------------"
 			echo
 			break
@@ -677,59 +677,59 @@ shadowsocks_ciphers_config() {
 install_info() {
 	clear
 	echo
-	echo " ....­ã?¦w?¤F«£..¬İ¬İ¦³¤ò¦³°t¸m¥¿ÚÌ¤F..."
+	echo " ....å‡†å¤‡å®‰è£…äº†å’¯..çœ‹çœ‹æœ‰æ¯›æœ‰é…ç½®æ­£ç¡®äº†..."
 	echo
-	echo "---------- ¦w?«H®§ -------------"
+	echo "---------- å®‰è£…ä¿¡æ¯ -------------"
 	echo
-	echo -e "$yellow V2Ray ???? = $cyan${transport[$v2ray_transport - 1]}$none"
+	echo -e "$yellow V2Ray ä¼ è¾“åè®® = $cyan${transport[$v2ray_transport - 1]}$none"
 
 	if [[ $v2ray_transport == [45] ]]; then
 		echo
-		echo -e "$yellow V2Ray ºİ¤f = $cyan$v2ray_port$none"
+		echo -e "$yellow V2Ray ç«¯å£ = $cyan$v2ray_port$none"
 		echo
-		echo -e "$yellow §Aªº°ì¦W = $cyan$domain$none"
+		echo -e "$yellow ä½ çš„åŸŸå = $cyan$domain$none"
 		echo
-		echo -e "$yellow °ì¦W¸ÑªR = ${cyan}§ÚÚÌ©w¤w?¦³¸ÑªR¤F$none"
+		echo -e "$yellow åŸŸåè§£æ = ${cyan}æˆ‘ç¡®å®šå·²ç»æœ‰è§£æäº†$none"
 		echo
-		echo -e "$yellow ¦Û?°t¸m TLS = $cyan$install_caddy_info$none"
+		echo -e "$yellow è‡ªåŠ¨é…ç½® TLS = $cyan$install_caddy_info$none"
 
 		if [[ $ban_ad ]]; then
 			echo
-			echo -e "$yellow ?§i?ºI = $cyan$blocked_ad_info$none"
+			echo -e "$yellow å¹¿å‘Šæ‹¦æˆª = $cyan$blocked_ad_info$none"
 		fi
 		if [[ $is_path ]]; then
 			echo
-			echo -e "$yellow ¸ô?¤À¬y = ${cyan}/${path}$none"
+			echo -e "$yellow è·¯å¾„åˆ†æµ = ${cyan}/${path}$none"
 		fi
 	elif [[ $v2ray_transport -ge 18 ]]; then
 		echo
-		echo -e "$yellow V2Ray ºİ¤f = $cyan$v2ray_port$none"
+		echo -e "$yellow V2Ray ç«¯å£ = $cyan$v2ray_port$none"
 		echo
-		echo -e "$yellow V2Ray ??ºİ¤f­S? = $cyan${v2ray_dynamic_port_start_input} - ${v2ray_dynamic_port_end_input}$none"
+		echo -e "$yellow V2Ray åŠ¨æ€ç«¯å£èŒƒå›´ = $cyan${v2ray_dynamic_port_start_input} - ${v2ray_dynamic_port_end_input}$none"
 
 		if [[ $ban_ad ]]; then
 			echo
-			echo -e "$yellow ?§i?ºI = $cyan$blocked_ad_info$none"
+			echo -e "$yellow å¹¿å‘Šæ‹¦æˆª = $cyan$blocked_ad_info$none"
 		fi
 	else
 		echo
-		echo -e "$yellow V2Ray ºİ¤f = $cyan$v2ray_port$none"
+		echo -e "$yellow V2Ray ç«¯å£ = $cyan$v2ray_port$none"
 
 		if [[ $ban_ad ]]; then
 			echo
-			echo -e "$yellow ?§i?ºI = $cyan$blocked_ad_info$none"
+			echo -e "$yellow å¹¿å‘Šæ‹¦æˆª = $cyan$blocked_ad_info$none"
 		fi
 	fi
 	if [ $shadowsocks ]; then
 		echo
-		echo -e "$yellow Shadowsocks ºİ¤f = $cyan$ssport$none"
+		echo -e "$yellow Shadowsocks ç«¯å£ = $cyan$ssport$none"
 		echo
-		echo -e "$yellow Shadowsocks ±K? = $cyan$sspass$none"
+		echo -e "$yellow Shadowsocks å¯†ç  = $cyan$sspass$none"
 		echo
-		echo -e "$yellow Shadowsocks ¥[±K?? = $cyan${ssciphers}$none"
+		echo -e "$yellow Shadowsocks åŠ å¯†åè®® = $cyan${ssciphers}$none"
 	else
 		echo
-		echo -e "$yellow ¬O§_°t¸m Shadowsocks = ${cyan}¥¼°t¸m${none}"
+		echo -e "$yellow æ˜¯å¦é…ç½® Shadowsocks = ${cyan}æœªé…ç½®${none}"
 	fi
 	echo
 	echo "---------- END -------------"
@@ -750,13 +750,13 @@ domain_check() {
 	test_domain=$(curl -sH 'accept: application/dns-json' "https://cloudflare-dns.com/dns-query?name=$domain&type=A" | grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}" | head -1)
 	if [[ $test_domain != $ip ]]; then
 		echo
-		echo -e "$red ??°ì¦W¸ÑªR??....$none"
+		echo -e "$red æ£€æµ‹åŸŸåè§£æé”™è¯¯....$none"
 		echo
-		echo -e " §Aªº°ì¦W: $yellow$domain$none ¥¼¸ÑªR¨ì: $cyan$ip$none"
+		echo -e " ä½ çš„åŸŸå: $yellow$domain$none æœªè§£æåˆ°: $cyan$ip$none"
 		echo
-		echo -e " §Aªº°ì¦W?«e¸ÑªR¨ì: $cyan$test_domain$none"
+		echo -e " ä½ çš„åŸŸåå½“å‰è§£æåˆ°: $cyan$test_domain$none"
 		echo
-		echo "?ª`...¦pªG§Aªº°ì¦W¬O¨Ï¥Î Cloudflare ¸ÑªRªº?..¦b Status ¨º¨½?¤@¤U¨º??..?¥¦?¦Ç"
+		echo "å¤‡æ³¨...å¦‚æœä½ çš„åŸŸåæ˜¯ä½¿ç”¨ Cloudflare è§£æçš„è¯..åœ¨ Status é‚£é‡Œç‚¹ä¸€ä¸‹é‚£å›¾æ ‡..è®©å®ƒå˜ç°"
 		echo
 		exit 1
 	fi
@@ -795,9 +795,9 @@ install_v2ray() {
 	if [[ $local_install ]]; then
 		if [[ ! -d $(pwd)/config ]]; then
 			echo
-			echo -e "$red «u§r§r...¦w?¥¢?¤F«£...$none"
+			echo -e "$red å“å‘€å‘€...å®‰è£…å¤±è´¥äº†å’¯...$none"
 			echo
-			echo -e " ?ÚÌ«O§A¦³§¹¾ãªº¤W? 233v2.com ªº V2Ray ¤@?¦w??¥» & ºŞ²z?¥»¨ì?«e ${green}$(pwd) $none¥Ø?¤U"
+			echo -e " è¯·ç¡®ä¿ä½ æœ‰å®Œæ•´çš„ä¸Šä¼  233v2.com çš„ V2Ray ä¸€é”®å®‰è£…è„šæœ¬ & ç®¡ç†è„šæœ¬åˆ°å½“å‰ ${green}$(pwd) $noneç›®å½•ä¸‹"
 			echo
 			exit 1
 		fi
@@ -812,9 +812,9 @@ install_v2ray() {
 
 	if [[ ! -d /etc/v2ray/233boy/v2ray ]]; then
 		echo
-		echo -e "$red «u§r§r...§J¶©?¥»??¥X?¤F...$none"
+		echo -e "$red å“å‘€å‘€...å…‹éš†è„šæœ¬ä»“åº“å‡ºé”™äº†...$none"
 		echo
-		echo -e " ?ÄÉ´£¥Ü..... ???¦Û¦æ¦w? Git: ${green}$cmd install -y git $none ¤§¦Z¦A¦w?¦¹?¥»"
+		echo -e " æ¸©é¦¨æç¤º..... è¯·å°è¯•è‡ªè¡Œå®‰è£… Git: ${green}$cmd install -y git $none ä¹‹åå†å®‰è£…æ­¤è„šæœ¬"
 		echo
 		exit 1
 	fi
@@ -968,18 +968,18 @@ get_ip() {
 	[[ -z $ip ]] && ip=$(curl -s https://api.myip.com | grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}")
 	[[ -z $ip ]] && ip=$(curl -s icanhazip.com)
 	[[ -z $ip ]] && ip=$(curl -s myip.ipip.net | grep -oE "([0-9]{1,3}\.){3}[0-9]{1,3}")
-	[[ -z $ip ]] && echo -e "\n$red ?©U§£¤p?¥µ¤F§a¡I$none\n" && exit
+	[[ -z $ip ]] && echo -e "\n$red è¿™åƒåœ¾å°é¸¡æ‰”äº†å§ï¼$none\n" && exit
 }
 
 error() {
 
-	echo -e "\n$red ?¤J??¡I$none\n"
+	echo -e "\n$red è¾“å…¥é”™è¯¯ï¼$none\n"
 
 }
 
 pause() {
 
-	read -rsp "$(echo -e "«ö$green Enter ¦^?? $none??....©Î«ö$red Ctrl + C $none¨ú®ø.")" -d $'\n'
+	read -rsp "$(echo -e "æŒ‰$green Enter å›è½¦é”® $noneç»§ç»­....æˆ–æŒ‰$red Ctrl + C $noneå–æ¶ˆ.")" -d $'\n'
 	echo
 }
 do_service() {
@@ -1001,16 +1001,16 @@ show_config_info() {
 install() {
 	if [[ -f /usr/bin/v2ray/v2ray && -f /etc/v2ray/config.json ]] && [[ -f $backup && -d /etc/v2ray/233boy/v2ray ]]; then
 		echo
-		echo " ¤j¨Ğ...§A¤w?¦w? V2Ray °Õ...?»İ­«·s¦w?"
+		echo " å¤§ä½¬...ä½ å·²ç»å®‰è£… V2Ray å•¦...æ— éœ€é‡æ–°å®‰è£…"
 		echo
-		echo -e " $yellow?¤J ${cyan}v2ray${none} $yellow§Y¥iºŞ²z V2Ray${none}"
+		echo -e " $yellowè¾“å…¥ ${cyan}v2ray${none} $yellowå³å¯ç®¡ç† V2Ray${none}"
 		echo
 		exit 1
 	elif [[ -f /usr/bin/v2ray/v2ray && -f /etc/v2ray/config.json ]] && [[ -f /etc/v2ray/233blog_v2ray_backup.txt && -d /etc/v2ray/233boy/v2ray ]]; then
 		echo
-		echo "  ¦pªG§A»İ­n??¦w?.. ?¥ı¨ø??ª©¥»"
+		echo "  å¦‚æœä½ éœ€è¦ç»§ç»­å®‰è£….. è¯·å…ˆå¸è½½æ—§ç‰ˆæœ¬"
 		echo
-		echo -e " $yellow?¤J ${cyan}v2ray uninstall${none} $yellow§Y¥i¨ø?${none}"
+		echo -e " $yellowè¾“å…¥ ${cyan}v2ray uninstall${none} $yellowå³å¯å¸è½½${none}"
 		echo
 		exit 1
 	fi
@@ -1047,19 +1047,19 @@ uninstall() {
 			_load uninstall.sh
 		else
 			echo
-			echo -e " $yellow?¤J ${cyan}v2ray uninstall${none} $yellow§Y¥i¨ø?${none}"
+			echo -e " $yellowè¾“å…¥ ${cyan}v2ray uninstall${none} $yellowå³å¯å¸è½½${none}"
 			echo
 		fi
 
 	elif [[ -f /usr/bin/v2ray/v2ray && -f /etc/v2ray/config.json ]] && [[ -f /etc/v2ray/233blog_v2ray_backup.txt && -d /etc/v2ray/233boy/v2ray ]]; then
 		echo
-		echo -e " $yellow?¤J ${cyan}v2ray uninstall${none} $yellow§Y¥i¨ø?${none}"
+		echo -e " $yellowè¾“å…¥ ${cyan}v2ray uninstall${none} $yellowå³å¯å¸è½½${none}"
 		echo
 	else
 		echo -e "
-		$red ¤j¯İ§Ì...§A»ª¦ü¤ò¦³¦w? V2Ray ....¨ø????®@...$none
+		$red å¤§èƒ¸å¼Ÿ...ä½ è²Œä¼¼æ¯›æœ‰å®‰è£… V2Ray ....å¸è½½ä¸ªé¸¡é¸¡å“¦...$none
 
-		?ª`...?¤ä«ù¨ø?¨Ï¥Î§Ú (233v2.com) ´£¨Ñªº V2Ray ¤@?¦w??¥»
+		å¤‡æ³¨...ä»…æ”¯æŒå¸è½½ä½¿ç”¨æˆ‘ (233v2.com) æä¾›çš„ V2Ray ä¸€é”®å®‰è£…è„šæœ¬
 		" && exit 1
 	fi
 
@@ -1078,13 +1078,13 @@ local)
 	;;
 *)
 	echo
-	echo -e " §A?¤Jªº???? <$red $args $none> ...??¬O¤°¤\°­°Ú...?¥»¤£??¥¦«z"
+	echo -e " ä½ è¾“å…¥çš„è¿™ä¸ªå‚æ•° <$red $args $none> ...è¿™ä¸ªæ˜¯ä»€ä¹ˆé¬¼å•Š...è„šæœ¬ä¸è®¤è¯†å®ƒå“‡"
 	echo
-	echo -e " ??»¶??¥»?¤ä«ù?¤J$green local / online $none??"
+	echo -e " è¿™ä¸ªè¾£é¸¡è„šæœ¬ä»…æ”¯æŒè¾“å…¥$green local / online $noneå‚æ•°"
 	echo
-	echo -e " ?¤J$yellow local $none§Y¬O¨Ï¥Î¥»¦a¦w?"
+	echo -e " è¾“å…¥$yellow local $noneå³æ˜¯ä½¿ç”¨æœ¬åœ°å®‰è£…"
 	echo
-	echo -e " ?¤J$yellow online $none§Y¬O¨Ï¥Î¦b?¦w? (Àq?)"
+	echo -e " è¾“å…¥$yellow online $noneå³æ˜¯ä½¿ç”¨åœ¨çº¿å®‰è£… (é»˜è®¤)"
 	echo
 	exit 1
 	;;
@@ -1093,21 +1093,21 @@ esac
 clear
 while :; do
 	echo
-	echo "........... V2Ray ¤@?¦w??¥» & ºŞ²z?¥» by 233v2.com .........."
+	echo "........... V2Ray ä¸€é”®å®‰è£…è„šæœ¬ & ç®¡ç†è„šæœ¬ by 233v2.com .........."
 	echo
-	echo "?§U?©ú: https://233v2.com/post/1/"
+	echo "å¸®åŠ©è¯´æ˜: https://233v2.com/post/1/"
 	echo
-	echo "·f«Ø±Ğµ{: https://233v2.com/post/2/"
+	echo "æ­å»ºæ•™ç¨‹: https://233v2.com/post/2/"
 	echo
-	echo " 1. ¦w?"
+	echo " 1. å®‰è£…"
 	echo
-	echo " 2. ¨ø?"
+	echo " 2. å¸è½½"
 	echo
 	if [[ $local_install ]]; then
-		echo -e "$yellow ?ÄÉ´£¥Ü.. ¥»¦a¦w?¤w?¥Î ..$none"
+		echo -e "$yellow æ¸©é¦¨æç¤º.. æœ¬åœ°å®‰è£…å·²å¯ç”¨ ..$none"
 		echo
 	fi
-	read -p "$(echo -e "??? [${magenta}1-2$none]:")" choose
+	read -p "$(echo -e "è¯·é€‰æ‹© [${magenta}1-2$none]:")" choose
 	case $choose in
 	1)
 		install
