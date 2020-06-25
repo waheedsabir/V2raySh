@@ -1,5 +1,5 @@
 
-install_v2ray
+$1
 install_v2ray() {
 	$cmd update -y
 	if [[ $cmd == "apt-get" ]]; then
